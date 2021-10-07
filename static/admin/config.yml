@@ -111,6 +111,8 @@ collections:
           widget: list,
           fields:
           [
+           { label: Image, name: img, widget: text },
+              { label: Name, name: name, widget: text },
             {
           label: Actors List,
           name: scenarios,
