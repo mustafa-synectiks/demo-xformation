@@ -114,35 +114,35 @@ collections:
             { label: Image, name: img, widget: text },
             { label: Name, name: name, widget: text },
             {
-          label: Actors List,
-          name: scenarios,
-          widget: list,
-          fields:
-            [
-              { label: Image, name: img, widget: text },
-              { label: Name, name: name, widget: text },
-              {
-                label: Use Cases,
-                name: subItems,
-                widget: list,
-                fields:
-                  [
-                    { label: Image, name: img, widget: text },
-                    { label: Name, name: name, widget: text },
-                    {
-                      label: Use Case Slider,
-                      name: useCaseSlider,
-                      widget: list,
-                      fields:
-                        [
-                          { label: Image, name: img, widget: text },
-                          { label: Name, name: name, widget: text },
-                          { label: Text, name: text, widget: text },
-                        ],
-                    },
-                  ],
-              },
-            ],
+                 label: Actors List,
+                 name: scenarios,
+                 widget: list,
+                 fields:
+                   [
+                     { label: Image, name: img, widget: text },
+                     { label: Name, name: name, widget: text },
+                     {
+                       label: Use Cases,
+                       name: subItems,
+                       widget: list,
+                       fields:
+                         [
+                           { label: Image, name: img, widget: text },
+                           { label: Name, name: name, widget: text },
+                           {
+                             label: Use Case Slider,
+                             name: useCaseSlider,
+                             widget: list,
+                             fields:
+                               [
+                                 { label: Image, name: img, widget: text },
+                                 { label: Name, name: name, widget: text },
+                                 { label: Text, name: text, widget: text },
+                               ],
+                           },
+                         ],
+                     },
+                    ],
         }
           ]
         }
