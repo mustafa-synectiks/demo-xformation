@@ -5,10 +5,12 @@ import { Scrollbars } from 'react-custom-scrollbars';
 import { AiFillCloseCircle } from "react-icons/ai";
 
 const SelectScenario = ({ modules, scenarios, onClickUseCase, onClickCloseScenario }) => {
-  const [selectedModules, setSelectedModules] = useState(null);
+  const [selectedModule, setSelectedModule] = useState(null);
   const [selectedScenario, setSelectedScenario] = useState(null);
 
-
+  function onClickCSelectModule(module){
+    setSelectedModule(module)
+  }
   function onClickSubSelectScenario(scenario) {
     setSelectedScenario(scenario);
   }
@@ -27,6 +29,32 @@ const SelectScenario = ({ modules, scenarios, onClickUseCase, onClickCloseScenar
         <AiFillCloseCircle />
       </button>
       <div className="scenario-container">
+        <Scrollbars>
+          {
+            modules &&
+            <ul>
+              {
+                modules.map((module) => (
+                  <li key={v4()}>
+                    <div className={`item ${selectedModule === module ? 'active' : ''}`} onClick={() =>
+                      onClickCSelectModule(module)}>
+                      <div className="image">
+                      <img
+                        src={module.img}
+                        alt={module.name}
+                        title={module.name}
+                        width="60"
+                        height="60"
+                      />
+                    </div>
+                    <div className="name">{module.name}</div>
+                      </div>
+                  </li>
+                ))
+              }
+            </ul>
+          }
+        </Scrollbars>
         <Scrollbars
           className="scenarioleft-scrollbars"
         >
@@ -36,7 +64,7 @@ const SelectScenario = ({ modules, scenarios, onClickUseCase, onClickCloseScenar
               {scenarios.map((scenario) => (
                 <li key={v4()}>
                   <div className={`item ${selectedScenario === scenario ? 'active' : ''}`} onClick={() => onClickSubSelectScenario(scenario)}>
-                    <div className="image">
+                  <div className="image">
                       <img
                         src={scenario.img}
                         alt={scenario.name}
